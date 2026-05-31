@@ -4,8 +4,8 @@ from sklearn.preprocessing import OrdinalEncoder, LabelEncoder
 import os
 
 # ── Konfigurasi path ──────────────────────────────────────────────────────────
-INPUT_PATH  = "dataset/data.csv"
-OUTPUT_PATH = "dataset/clean_data.csv"
+INPUT_PATH  = "data.csv"
+OUTPUT_PATH = "clean_data.csv"
 
 # ── Definisi fitur ────────────────────────────────────────────────────────────
 numeric_features = [
