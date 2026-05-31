@@ -5,7 +5,7 @@ import os
 
 # ── Konfigurasi path ──────────────────────────────────────────────────────────
 INPUT_PATH  = "data.csv"
-OUTPUT_PATH = "clean_data.csv"
+OUTPUT_PATH = "MLproject/clean_data.csv"
 
 # ── Definisi fitur ────────────────────────────────────────────────────────────
 numeric_features = [
