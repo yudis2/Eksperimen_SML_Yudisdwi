@@ -1,4 +1,4 @@
-name: Preprocessing Pipeline
+name: Preprocessing
 
 on:
   push:
