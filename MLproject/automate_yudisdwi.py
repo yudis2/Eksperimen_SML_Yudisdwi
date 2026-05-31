@@ -5,7 +5,7 @@ import os
 
 # ── Konfigurasi path ──────────────────────────────────────────────────────────
 INPUT_PATH  = "data.csv"
-OUTPUT_PATH = "MLproject/clean_data.csv"
+OUTPUT_PATH = "clean_data.csv"
 
 # ── Definisi fitur ────────────────────────────────────────────────────────────
 numeric_features = [
@@ -137,6 +137,14 @@ def binning(df: pd.DataFrame, df_before_encode: pd.DataFrame) -> pd.DataFrame:
 
 def save_data(df: pd.DataFrame, path: str) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    df.to_csv(path, index=False)
+    print(f"\n✅ Dataset bersih disimpan ke: {path}")
+    print(f"   Shape akhir: {df.shape}")
+
+def save_data(df: pd.DataFrame, path: str) -> None:
+    dir_name = os.path.dirname(path)
+    if dir_name:  # hanya mkdir jika ada subdirektori
+        os.makedirs(dir_name, exist_ok=True)
     df.to_csv(path, index=False)
     print(f"\n✅ Dataset bersih disimpan ke: {path}")
     print(f"   Shape akhir: {df.shape}")
