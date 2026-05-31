@@ -1,0 +1,37 @@
+name: Preprocessing Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+ 
+      # Setup Python 3.12.7
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.7"
+      
+      # run preprocessing
+      - name: Run preprocessing
+        run: |
+          python automate_yudisdwi.py
+          
+      # make new file .csv
+      - name: Commit & push clean_data.csv
+        run: |
+          git config --global user.name ${{ secrets.USERNAME }}
+          git config --global user.email ${{ secrets.EMAIL }}
+          git add dataset/clean_data.csv
+          git diff --cached --quiet || git commit -m "chore: update clean_data.csv [skip ci]"
+          git push
