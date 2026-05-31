@@ -26,7 +26,13 @@ jobs:
       # Check Env Variables
       - name: Check Env
         run: |
-          echo $CSV_URL 
+          echo $CSV_URL
+
+      # Install mlflow
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mlflow
           
       # Run as a mlflow project
       - name: Run mlflow project
