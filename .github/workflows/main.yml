@@ -44,6 +44,6 @@ jobs:
         run: |
           git config --global user.name ${{ secrets.USERNAME }}
           git config --global user.email ${{ secrets.EMAIL }}
-          git add MLproject/clean_data.csv
+          git add Membangun_model/clean_data.csv
           git diff --cached --quiet || git commit -m "chore: update clean_data.csv [skip ci]"
           git push
