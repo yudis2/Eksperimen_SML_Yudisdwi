@@ -8,7 +8,7 @@ on:
     branches:
       - main
 env:
-  CSV_URL: "MLproject/data.csv"
+  CSV_URL: "Membangun_model/data.csv"
   
 jobs:
   build:
